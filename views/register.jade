@@ -1,0 +1,35 @@
+extends layout
+
+block content
+    .container
+        h1  Register Page
+        p   Please Fill The Below Form
+        hr
+
+        ul.errors
+            if errors
+                each error, i in errors
+                    li.alert.alert-danger #{error.msg}
+
+        .row
+            .col-lg-12
+                form(role='form' method='post' action='/users/register')
+                    .form-group
+                        label(for='name') Name:
+                        input#name.form-control(type='input' name='name' placeholder='Enter the name')
+                    .form-group
+                        label(for='email') Email:
+                        input#email.form-control(type='input' name='email' placeholder='Enter the email')
+                    .form-group
+                        label(for='username') Username:
+                        input#username.form-control(type='input' name='username' placeholder='Enter the username')
+                    .form-group
+                        label(for='password') Password:
+                        input#password.form-control(type='password' name='password' placeholder='Enter the password')
+                    .form-group
+                        label(for='confirmpassowrd') Password Confirm:
+                        input#confirmpassowrd.form-control(type='password' name='confirm' placeholder='Renter the password')
+                    .form-group
+                        label Profile Image:
+                        input.form-control(type='file' name='profileimage')
+                    button.btn.btn-default(type='submit') Register

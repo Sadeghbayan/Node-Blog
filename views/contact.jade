@@ -1,0 +1,19 @@
+extends layout
+
+block content
+    .container
+        h1  Contact Us Page
+        hr
+        .row
+            .col-lg-12
+                form(role='form' method='post' action='contact/send')
+                    .form-group
+                        label(for='email') Email address:
+                        input#email.form-control(type='email' name='email')
+                    .form-group
+                        label(for='name') Name:
+                        input#name.form-control(type='input' name='name')
+                    .form-group
+                        label(for='msg') Message:
+                        textarea#msg.form-control(name='message')
+                    button.btn.btn-default(type='submit') Submit

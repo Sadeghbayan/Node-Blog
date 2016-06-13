@@ -1,0 +1,28 @@
+extends layout
+
+block content
+    .container
+        h1  Add New Post ...
+        hr
+
+        ul.errors
+            if errors
+                each error, i in errors
+                    li.alert.alert-danger #{error.msg}
+
+        .row
+            .col-lg-12
+                form(role='form' method='post' action='/add-post/new' enctype="multipart/form-data")
+                    .form-group
+                        label(for='title') Title:
+                        input#title.form-control(type='input' name='title')
+                    .form-group
+                        label(for='body') Body:
+                        textarea#body.form-control(name='body')
+                    .form-group
+                        label(for='productCode') Product Code:
+                        input#productCode.form-control(type='input' name='productCode')
+                    .form-group
+                        label Product Image:
+                        input(type='file' name='image')
+                    button.btn.btn-default(type='submit') Save

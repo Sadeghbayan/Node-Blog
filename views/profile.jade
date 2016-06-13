@@ -1,0 +1,14 @@
+extends layout
+
+block content
+    .container(ng-controller="profileCtrl")
+        h1  Profile Page
+        div
+            label Username
+              p #{doc.username}
+        div
+            label Name
+                p #{doc.name}
+        div
+            label Email
+              p #{doc.email}
